@@ -1,0 +1,148 @@
+#%RAML 0.8
+---
+title: API AMT Project1
+baseUri: https://localhost/api/{version}
+version: v1
+protocols: [HTTPS]
+mediaType: application/json
+
+traits:
+  - private: !include _traits/private.raml
+
+/observations:
+  description: Get all the observations.
+  get:
+    description: Get all the observations.
+    body:
+      application/json:
+        example: |
+          { }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              { Collection : "Observation" }
+    headers:
+      Authorization:
+        description: |
+          A description.
+          <private>
+          Note that you can also add `<private>` blocks in here.
+          </private>
+          
+          
+  /{idObservation}:
+      description: Get specific observations.
+      get:
+        description: Get One observation by its id.
+        body:
+          application/json:
+            example: |
+              { "id" : "32" }
+        responses:
+          201:
+            body:
+              application/json:
+                example: |
+                  { "id" : "32", "time" : "321312312312", "value" : "31321" }
+        headers:
+          Authorization:
+            description: |
+              A description.
+              <private>
+              Note that you can also add `<private>` blocks in here.
+              </private>
+
+/organizations:
+  description: Get all the available organizations
+  get:
+    description: Get all the organizations.
+    body:
+      application/json:
+        example: |
+          { }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              { Collection : "organizations"}
+    headers:
+      Authorization:
+        description: |
+          A description.
+          <private>
+          Note that you can also add `<private>` blocks in here.
+          </private>
+
+  /{idOrganization}:
+    get:
+      description: Retrieve an organization by its id.
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                { "id" : "33" }
+        404:
+          description: The resource was not found.
+    post:
+      description: Create a new organization
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                { "id" : "33", "name" : "Troll and Co" }
+        404:
+          description: The resource was not found.
+    delete:
+      is: [private]
+      description: Delete an organization.
+/users:
+  description: Get all the users
+  get:
+    description: Get all the users
+    body:
+      application/json:
+        example: |
+          { }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              { Collection : "users"}
+    headers:
+      Authorization:
+        description: |
+          A description.
+          <private>
+          Note that you can also add `<private>` blocks in here.
+          </private>
+
+  /{idUser}:
+    get:
+      description: Retrieve an user by its id.
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                { "id" : "33" }
+        404:
+          description: The resource was not found.
+    post:
+      description: Create a new organization
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                { "id" : "33", "name" : "John Doe" }
+        404:
+          description: The resource was not found.
+    delete:
+      is: [private]
+      description: Delete an organization.

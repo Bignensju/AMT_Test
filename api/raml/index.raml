@@ -1,0 +1,668 @@
+#%RAML 0.8
+---
+#Auteurs: Brito Carvalho & Bignens
+title: API AMT Project1
+baseUri: https://localhost/api/{version}
+version: v2
+protocols: [HTTPS]
+mediaType: application/json
+
+traits:
+  - private: !include _traits/private.raml
+/sensors:
+  description: Get all the sensors.
+  get:
+    description: Get all the sensors.        
+    queryParameters:
+     empty:
+      displayName: empty
+      description: without filter
+      example: ../AMT_REST/api/sensors
+      required: false
+     idOrganization:
+      displayName: organizationid
+      type: integer
+      description: filter on organization's sensors
+      example: ../AMT_REST/api/sensors?organizationid=123
+      required: false 
+    responses:
+      200:
+        body:
+            example: |
+              {
+                 "description": "None, really",
+                 "id": 1,
+                 "name": "sensor_org1_0",
+                 "organizationId": 1,
+                 "type": "THERMO",
+                 "visibility": "All"
+              } 
+      404:
+        description: The resource was not found.
+  post:
+    description: Create a new sensor.        
+    queryParameters:
+     idSensor:
+      displayName: id
+      description: sensor's id [not required]
+      example: |
+         {"id": "1"}
+      required: false
+     nameSensor:
+      displayName: name
+      description: sensor's name [required]
+      example: |
+         {"name": "sensor_org1_0"}
+      required: true
+     descriptionSensor:
+      displayName: description
+      description: sensor's description [required]
+      example: |
+         {"description": "None, really"}
+      required: true
+     typeSensor:
+      displayName: type
+      description: sensor's type [required]
+      example: |
+         {"type": "THERMO"}
+      required: true
+     visibilitySensor:
+      displayName: visibility
+      description: sensor's visibility [required]
+      example: |
+         {"visibility": "All"}
+      required: true
+     organizationIdSensor:
+      displayName: organizaionid
+      description: sensor's organizaionid [required]
+      example: |
+         {"organizaionid": "1"}
+      required: true
+    responses:
+      200:
+        body:
+            example: |
+              { 1 }
+      404:
+        description: Error.
+  put:
+    description: update a new sensor.        
+    queryParameters:
+     idSensor:
+      displayName: id
+      description: sensor's id [required]
+      example: |
+         {"id": "1"}
+      required: true
+     nameSensor:
+      displayName: name
+      description: sensor's name [not required]
+      example: |
+         {"name": "sensor_org1_0_update"}
+      required: false
+     descriptionSensor:
+      displayName: description
+      description: sensor's description [not required]
+      example: |
+         {"description": "None, really_update"}
+      required: false
+     typeSensor:
+      displayName: type
+      description: sensor's type [not required]
+      example: |
+         {"type": "THERMO_update"}
+      required: false
+     visibilitySensor:
+      displayName: visibility
+      description: sensor's visibility [not required]
+      example: |
+         {"visibility": "All_update"}
+      required: false
+     organizationIdSensor:
+      displayName: organizaionid
+      description: sensor's organizaionid [not required]
+      example: |
+         {"organizaionid": "3"}
+      required: false
+    responses:
+      200:
+        body:
+            example: |
+              {  }
+      404:
+        description: Error.
+  /{idSensor}:
+      description: Get specific sensor.
+      get:
+        description: Get One sensor by its id.
+        queryParameters:
+         empty:
+          displayName: empty
+          description: without filter
+          example: ../AMT_REST/api/sensors/3
+          required: true
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                     "description": "None, really",
+                     "id": 1,
+                     "name": "sensor_org1_0",
+                     "organizationId": 1,
+                     "type": "THERMO",
+                     "visibility": "All"
+                  }
+          404:
+            description: The resource was not found.      
+      delete:
+        description: Delete specific sensors
+
+/observations:
+  description: Get all the observations.
+  get:
+    description: Get all the observations.
+    queryParameters:
+     empty:
+      displayName: empty
+      description: without filter
+      example: ../AMT_REST/api/observations
+      required: false
+     idSensor:
+      displayName: sensorid
+      type: integer
+      description: filter on sensor's observation
+      example: ../AMT_REST/api/observations?sensorid=32
+      required: false
+     idOrganization:
+      displayName: organizationid
+      type: integer
+      description: filter on organization's observation
+      example: ../AMT_REST/api/observations?organizationid=123
+      required: false
+     idOrganization&idSensor:
+      displayName: organizationid&sensorid
+      type: integer
+      description: filter that uses organizationid and sensorid
+      example: ../AMT_REST/api/observations?organizationid=123&sensorid=32
+      required: false
+    responses:
+      200:
+        body:
+            example: |
+              {
+                 "id": 1,
+                 "sensorId": 1,
+                 "timeS": "2014-12-13T18:00:06+01:00",
+                 "valueObservation": 4.2076842236244065
+              } 
+      404:
+        description: The resource was not found.       
+  post:
+    description: Create a new observation.        
+    queryParameters:
+     idObservation:
+      displayName: id
+      description: observation's id [not required]
+      example: |
+         {"id": "1"}
+      required: false
+     timestampObservation:
+      displayName: timeS
+      description: observation's time [required]
+      example: |
+         {"timeS": "2014-12-13T18:00:06+01:00"}
+      required: true
+     valueObservation:
+      displayName: valueObservation
+      description: observation's value [required]
+      example: |
+         {"valueObservation": "4.2076842236244065"}
+      required: true
+     sensorIdObservation:
+      displayName: sensorId
+      description: observation's sensorId [required]
+      example: |
+         {"sensorId": 1}
+      required: true
+    responses:
+      200:
+        body:
+            example: |
+              { 1 }
+      404:
+        description: Error.
+  put:
+    description: update a new sensor.        
+    queryParameters:
+     idObservation:
+      displayName: id
+      description: observation's id [required]
+      example: |
+         {"id": "1"}
+      required: true
+     timestampObservation:
+      displayName: timeS
+      description: observation's time [not required]
+      example: |
+         {"timeS": "2015-12-13T18:00:06+01:00"}
+      required: false
+     valueObservation:
+      displayName: valueObservation
+      description: observation's value [not required]
+      example: |
+         {"valueObservation": "0.2076842236244065"}
+      required: false
+     sensorIdObservation:
+      displayName: sensorId
+      description: observation's sensorId [not required]
+      example: |
+         {"sensorId": 3}
+      required: false
+    responses:
+      200:
+        body:
+            example: |
+              {  }
+      404:
+        description: Error.  
+  /{idObservation}:
+      description: Get specific observations.
+      get:
+        description: Get One observation by its id.
+        queryParameters:
+         empty:
+          displayName: empty
+          description: without filter
+          example: ../AMT_REST/api/observations/3
+          required: true
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                     "id": 1,
+                     "sensorId": 1,
+                     "timeS": "2014-12-13T18:00:06+01:00",
+                     "valueObservation": 4.2076842236244065
+                  }
+          404:
+            description: The resource was not found.
+      delete:
+        description: Delete an observation.
+
+/organizations:
+  description: Get all the available organizations
+  get:
+    description: Get all the organizations.
+    queryParameters:
+     empty:
+      displayName: empty
+      description: without filter
+      example: ../AMT_REST/api/organizations
+      required: false
+     idUser:
+      displayName: userid
+      type: integer
+      description: filter that uses userid
+      example: ../AMT_REST/api/organizations?sensorid=32
+      required: false 
+    responses:
+      200:
+        body:
+            example: |
+              {
+                 "contactId": 1,
+                 "id": 1,
+                 "name": "Org1"
+              } 
+      404:
+        description: The resource was not found.
+  post:
+    description: Create a new organization.        
+    queryParameters:
+     idOrganization:
+      displayName: id
+      description: organization's id [not required]
+      example: |
+         {"id": "1"}
+      required: false
+     nameOrganization:
+      displayName: name
+      description: organization's name [required]
+      example: |
+         {"name": "Org1"}
+      required: true
+     contactIdOrganization:
+      displayName: contactId
+      description: organization's contactId [required]
+      example: |
+         {"contactId": 1}
+      required: true
+    responses:
+      200:
+        body:
+            example: |
+              { 1 }
+      404:
+        description: Error.
+  put:
+    description: update a new organization.        
+    queryParameters:
+     idOrganization:
+      displayName: id
+      description: organization's id [required]
+      example: |
+         {"id": "1"}
+      required: true
+     nameOrganization:
+      displayName: name
+      description: organization's name [not required]
+      example: |
+         {"name": "Org1_update"}
+      required: false
+     contactIdOrganization:
+      displayName: contactId
+      description: organization's contactId [not required]
+      example: |
+         {"contactId": 2}
+      required: false
+    responses:
+      200:
+        body:
+            example: |
+              {  }
+      404:
+        description: Error. 
+  /{idOrganization}:
+    description: Get specific organization.
+    get:
+      description: Get One organization by its id.
+      queryParameters:
+       empty:
+        displayName: empty
+        description: without filter
+        example: ../AMT_REST/api/organizations/3
+        required: true
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                   "contactId": 1,
+                   "id": 1,
+                   "name": "Org1"
+                }
+        404:
+          description: The resource was not found.
+    delete:
+      description: Delete an organization.
+/users:
+  description: Get all the users
+  get:
+    description: Get all the users.
+    queryParameters:
+     empty:
+      displayName: empty
+      description: without filter
+      example: ../AMT_REST/api/users
+      required: false
+     idOrganization:
+      displayName: organizaionid
+      type: integer
+      description: filter that uses organizaionid
+      example: ../AMT_REST/api/users?organizaionid=123
+      required: false 
+    responses:
+      200:
+        body:
+            example: |
+              {
+                 "id": 1,
+                 "name": "John",
+                 "organizationId": 1
+              } 
+      404:
+        description: The resource was not found.
+  post:
+    description: Create a new user.        
+    queryParameters:
+     idUser:
+      displayName: id
+      description: user's id [not required]
+      example: |
+         {"id": "1"}
+      required: false
+     nameUser:
+      displayName: name
+      description: user's name [required]
+      example: |
+         {"name": "John"}
+      required: true
+     organizationIdUser:
+      displayName: organizationId
+      description: user's organizationId [required]
+      example: |
+         {"organizationId": 1}
+      required: true
+    responses:
+      200:
+        body:
+            example: |
+              { 1 }
+      404:
+        description: Error.
+  put:
+    description: update a new user.        
+    queryParameters:
+     idUser:
+      displayName: id
+      description: user's id [required]
+      example: |
+         {"id": "1"}
+      required: true
+     nameUser:
+      displayName: name
+      description: user's name [not required]
+      example: |
+         {"name": "John_update"}
+      required: false
+     organizationIdUser:
+      displayName: organizationId
+      description: user's organizationId [not required]
+      example: |
+         {"organizationId": 2}
+      required: false
+    responses:
+      200:
+        body:
+            example: |
+              {  }
+      404:
+        description: Error. 
+  /{idUser}:
+    get:
+      description: Retrieve an user by its id.
+      queryParameters:
+       empty:
+        displayName: empty
+        description: without filter
+        example: ../AMT_REST/api/users/3
+        required: true
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                   "id": 1,
+                   "name": "John",
+                   "organizationId": 1
+                }
+        404:
+          description: The resource was not found.
+    delete:
+      description: Delete a user.
+/facts:
+  description: Get all the facts
+  get:
+    description: Get all the facts.
+    queryParameters:
+     empty:
+      displayName: empty
+      description: without filter
+      example: ../AMT_REST/api/facts
+      required: false
+     idOrganization:
+      displayName: organizaionid
+      type: integer
+      description: filter on organization's facts
+      example: ../AMT_REST/api/facts?organizaionid=123
+      required: false
+     idSensor:
+      displayName: sensorid
+      type: integer
+      description: filter on sensor's facts
+      example: ../AMT_REST/api/facts?sensorid=123
+      required: false
+     idSensor&date:
+      displayName: sensorid&date
+      type: string
+      description: filter that uses sensorid & date
+      example: ../AMT_REST/api/facts?sensorid=32&date=2014-12-13
+      required: false 
+    responses:
+      200:
+        body:
+            example: |
+              {
+                 "id": 1,
+                 "information": "min":0.0011727332647970545,"avg":1.9772292442778343,"max":9.953122573291932,"counter":51,
+                 "organizationId": 2,
+                 "sensorId": 20,
+                 "type": "DATE_COUNTER",
+                 "visibility": "ALL"
+              } 
+      404:
+        description: The resource was not found.
+  post:
+    description: Create a new fact.        
+    queryParameters:
+     idFact:
+      displayName: id
+      description: fact's id [not required]
+      example: |
+         {"id": "1"}
+      required: false
+     informationFact:
+      displayName: information
+      description: fact's information [required]
+      example: |
+         {"information": "min":0.0011727332647970545,"avg":1.9772292442778343,"max":9.953122573291932,"counter":51}
+      required: true
+     typeFact:
+      displayName: type
+      description: fact's type [required]
+      example: |
+         {"organizationId": 2}
+      required: true
+     visibilityFact:
+      displayName: visibility
+      description: fact's visibility [required]
+      example: |
+         {"visibility": "ALL"}
+      required: true
+     organizationIdFact:
+      displayName: organizaionId
+      description: fact's organizaionId [required]
+      example: |
+         {"organizationId": 2}
+      required: true
+     sensorIdFact:
+      displayName: sensorId
+      description: fact's sensorId [required]
+      example: |
+         {"sensorId": 20}
+      required: true
+    responses:
+      200:
+        body:
+            example: |
+              { 1 }
+      404:
+        description: Error.
+  put:
+    description: update a new fact.        
+    queryParameters:
+     idFact:
+      displayName: id
+      description: fact's id [required]
+      example: |
+         {"id": "1"}
+      required: true
+     informationFact:
+      displayName: information
+      description: fact's information [not required]
+      example: |
+         {"information": "min":0.0011727332647970545,"avg":1.9772292442778343,"max":9.953122573291932,"counter":51}
+      required: false
+     typeFact:
+      displayName: type
+      description: fact's type [not required]
+      example: |
+         {"organizationId": 2}
+      required: false
+     visibilityFact:
+      displayName: visibility
+      description: fact's visibility [not required]
+      example: |
+         {"visibility": "ALL"}
+      required: false
+     organizationIdFact:
+      displayName: organizaionId
+      description: fact's organizaionId [not required]
+      example: |
+         {"organizationId": 2}
+      required: false
+     sensorIdFact:
+      displayName: sensorId
+      description: fact's sensorId [not required]
+      example: |
+         {"sensorId": 20}
+      required: false
+    responses:
+      200:
+        body:
+            example: |
+              {  }
+      404:
+        description: Error.
+  /{idFact}:
+    get:
+      description: Retrieve an fact by its id.
+      queryParameters:
+       empty:
+        displayName: empty
+        description: without filter
+        example: ../AMT_REST/api/facts/3
+        required: true
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                   "id": 1,
+                   "information": "min":0.0011727332647970545,"avg":1.9772292442778343,"max":9.953122573291932,"counter":51,
+                   "organizationId": 2,
+                   "sensorId": 20,
+                   "type": "DATE_COUNTER",
+                   "visibility": "ALL"
+                }
+        404:
+          description: The resource was not found.
+    delete:
+      description: Delete a fact.

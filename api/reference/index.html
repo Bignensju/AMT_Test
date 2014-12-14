@@ -5,7 +5,10 @@
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="An API documentation project using Grunt, Metalsmith and RAML.">
-    <link rel="stylesheet" href="C:/Program Files (x86)/Git/foobar/css/global.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/raml.css">
+    <link rel="stylesheet" href="/css/highlight.github.min.css">
   </head>
   <body>
     <nav role="navigation" class="navbar navbar-default">
@@ -15,10 +18,10 @@
         </div>
         <div id="navbarcollapse" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="C:/Program Files (x86)/Git/foobar/">Home</a></li>
-            <li class="active"><a href="C:/Program Files (x86)/Git/foobar/api">API Reference</a></li>
-            <li><a href="C:/Program Files (x86)/Git/foobar/blog">Blog</a></li>
-            <li><a href="C:/Program Files (x86)/Git/foobar/support">Support</a></li>
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/api">API Reference</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/support">Support</a></li>
           </ul>
         </div>
       </div>
@@ -29,77 +32,229 @@
           <h1>Resources</h1>
           <hr>
           <ul class="nav subnav">
-            <li><a href="C:/Program Files (x86)/Git/foobar/api/reference/#myResource"><span>/myResource</span></a></li>
+            <li><a href="/api/reference/#sensors"><span>/sensors</span></a></li>
+            <li><a href="/api/reference/#observations"><span>/observations</span></a></li>
+            <li><a href="/api/reference/#organizations"><span>/organizations</span></a></li>
+            <li><a href="/api/reference/#users"><span>/users</span></a></li>
+            <li><a href="/api/reference/#facts"><span>/facts</span></a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-pull-3"><a id="top"></a>
           <h1>List of resources</h1>
           <hr>
-          <div class="page-header"><small></small><b>Endpoint: &nbsp;&nbsp;</b>https://localhost/api/v1
+          <div class="page-header"><small></small><b>Endpoint: &nbsp;&nbsp;</b>https://localhost/api/v2
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 id="myResource" class="panel-title">
-                /myResource
+              <h3 id="sensors" class="panel-title">
+                /sensors
                 
               </h3>
             </div>
             <div class="panel-body">
-              <div class="resource-description"><p>This is my resource.</p>
+              <div class="resource-description"><p>Get all the sensors.</p>
 </div>
               <div class="panel-group">
                 <div class="panel panel-white">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_myResource" class="block collapsed"><span id="post_myResource" class="badge badge_post">post  </span><span class="parent"></span>/myResource
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_sensors" class="block collapsed"><span id="get_sensors" class="badge badge_get">get  </span><span id="post_sensors" class="badge badge_post">post  </span><span id="put_sensors" class="badge badge_put">put  </span><span class="parent"></span>/sensors
                         </a>
                     </h4>
                   </div>
-                  <div id="panel_myResource" class="panel-collapse collapse">
+                  <div id="panel_sensors" class="panel-collapse collapse">
                     <div class="panel-body">
                       <!-- extended "buttons" (list)-->
-                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#myResource_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p><p>Create a resource</p>
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#sensors_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Get all the sensors</p>
+</span></a><a href="#" data-toggle="modal" data-target="#sensors_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p><p>Create a new sensor</p>
+</span></a><a href="#" data-toggle="modal" data-target="#sensors_put" class="list-group-item"><span class="badge badge_put">put  </span><span><p><p>update a new sensor</p>
 </span></a>
                       </div>
                     </div>
                   </div>
-                  <div id="myResource_post" class="modal fade">
+                  <div id="sensors_get" class="modal fade">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/myResource</h4>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/sensors</h4>
                         </div>
                         <div class="modal-body">
                           <!-- Nav tabs-->
                           <ul class="nav nav-tabs">
-                            <li class="active"><a href="#myResource_post_description" data-toggle="tab">Description</a></li>
-                            <li><a href="#myResource_post_request" data-toggle="tab">Request</a></li>
-                            <li><a href="#myResource_post_response" data-toggle="tab">Response</a></li>
+                            <li class="active"><a href="#sensors_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#sensors_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#sensors_get_response" data-toggle="tab">Response</a></li>
                           </ul>
                           <!-- Tab panes-->
                           <div class="tab-content">
-                            <div id="myResource_post_description" class="tab-pane active"><span><p>Create a resource. More text is only rendered in the details view of the method.</p>
+                            <div id="sensors_get_description" class="tab-pane active"><span><p>Get all the sensors.</p>
 </span>
                             </div>
-                            <div id="myResource_post_request" class="tab-pane">
-                              <h3>Headers</h3>
+                            <div id="sensors_get_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
                               <ul>
-                                <li class="markdown"><strong>Authorization</strong><em> (string)</em><p>A description.</p>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
 
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/sensors</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idOrganization</strong><em> (integer)</em><p>filter on organization’s sensors</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/sensors?organizationid=123</code></small></p>
                                 </li>
                               </ul>
-                              <h3>Body</h3>
-                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
-                              <pre>{ "<span class="hljs-attribute">name</span>" : <span class="hljs-value"><span class="hljs-string">"myResource"</span> </span>}
-</pre>
                             </div>
-                            <div id="myResource_post_response" class="tab-pane">
-                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/201" target="_blank">201</a></h2>
+                            <div id="sensors_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
                               <h3>Body</h3>
                               <p><strong>Type: application/json</strong></p><strong>Example:</strong>
-                              <pre>{ "<span class="hljs-attribute">id</span>" : <span class="hljs-value"><span class="hljs-number">1</span></span>, "<span class="hljs-attribute">name</span>" : <span class="hljs-value"><span class="hljs-string">"myResource"</span> </span>}
+                              <pre>{
+   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"None, really"</span></span>,
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"sensor_org1_0"</span></span>,
+   "<span class="hljs-attribute">organizationId</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"THERMO"</span></span>,
+   "<span class="hljs-attribute">visibility</span>": <span class="hljs-value"><span class="hljs-string">"All"</span>
+</span>} 
 </pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="sensors_post" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/sensors</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#sensors_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#sensors_post_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#sensors_post_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="sensors_post_description" class="tab-pane active"><span><p>Create a new sensor.</p>
+</span>
+                            </div>
+                            <div id="sensors_post_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idSensor</strong><em> (string)</em><p>sensor’s id [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>nameSensor</strong><em> (string)</em><p>sensor’s name [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"name": "sensor_org1_0"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>descriptionSensor</strong><em> (string)</em><p>sensor’s description [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"description": "None, really"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>typeSensor</strong><em> (string)</em><p>sensor’s type [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"type": "THERMO"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>visibilitySensor</strong><em> (string)</em><p>sensor’s visibility [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"visibility": "All"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>organizationIdSensor</strong><em> (string)</em><p>sensor’s organizaionid [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"organizaionid": "1"}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="sensors_post_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{ <span class="hljs-number">1</span> }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="sensors_put" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_put">put  </span>&nbsp;&nbsp;<span class="parent"></span>/sensors</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#sensors_put_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#sensors_put_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#sensors_put_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="sensors_put_description" class="tab-pane active"><span><p>update a new sensor.</p>
+</span>
+                            </div>
+                            <div id="sensors_put_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idSensor</strong><em> (string)</em><p>sensor’s id [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>nameSensor</strong><em> (string)</em><p>sensor’s name [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"name": "sensor_org1_0_update"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>descriptionSensor</strong><em> (string)</em><p>sensor’s description [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"description": "None, really_update"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>typeSensor</strong><em> (string)</em><p>sensor’s type [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"type": "THERMO_update"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>visibilitySensor</strong><em> (string)</em><p>sensor’s visibility [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"visibility": "All_update"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>organizationIdSensor</strong><em> (string)</em><p>sensor’s organizaionid [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"organizaionid": "3"}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="sensors_put_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{  }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
                             </div>
                           </div>
                         </div>
@@ -110,51 +265,1299 @@
                 <div class="panel panel-white">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_myResource_myResourceId" class="block collapsed"><span id="get_myResource_myResourceId" class="badge badge_get">get  </span><span class="parent">/myResource</span>/{myResourceId}
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_sensors_idSensor" class="block collapsed"><span id="get_sensors_idSensor" class="badge badge_get">get  </span><span id="delete_sensors_idSensor" class="badge badge_delete">delete  </span><span class="parent">/sensors</span>/{idSensor}
                         </a>
                     </h4>
                   </div>
-                  <div id="panel_myResource_myResourceId" class="panel-collapse collapse">
+                  <div id="panel_sensors_idSensor" class="panel-collapse collapse">
                     <div class="panel-body">
                       <!-- extended "buttons" (list)-->
-                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#myResource_myResourceId_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Retrieve a resource</p>
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#sensors_idSensor_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Get One sensor by its id</p>
+</span></a><a href="#" data-toggle="modal" data-target="#sensors_idSensor_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p>Delete specific sensors</p>
 </span></a>
                       </div>
                     </div>
                   </div>
-                  <div id="myResource_myResourceId_get" class="modal fade">
+                  <div id="sensors_idSensor_get" class="modal fade">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/myResource</span>/{myResourceId}</h4>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/sensors</span>/{idSensor}</h4>
                         </div>
                         <div class="modal-body">
                           <!-- Nav tabs-->
                           <ul class="nav nav-tabs">
-                            <li class="active"><a href="#myResource_myResourceId_get_description" data-toggle="tab">Description</a></li>
-                            <li><a href="#myResource_myResourceId_get_request" data-toggle="tab">Request</a></li>
-                            <li><a href="#myResource_myResourceId_get_response" data-toggle="tab">Response</a></li>
+                            <li class="active"><a href="#sensors_idSensor_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#sensors_idSensor_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#sensors_idSensor_get_response" data-toggle="tab">Response</a></li>
                           </ul>
                           <!-- Tab panes-->
                           <div class="tab-content">
-                            <div id="myResource_myResourceId_get_description" class="tab-pane active"><span><p>Retrieve a resource.</p>
+                            <div id="sensors_idSensor_get_description" class="tab-pane active"><span><p>Get One sensor by its id.</p>
 </span>
                             </div>
-                            <div id="myResource_myResourceId_get_request" class="tab-pane">
+                            <div id="sensors_idSensor_get_request" class="tab-pane">
                               <h3>URI Parameters</h3>
                               <ul>
-                                <li><strong>myResourceId string</strong></li>
+                                <li><strong>idSensor string</strong></li>
+                              </ul>
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/sensors/3</code></small></p>
+                                </li>
                               </ul>
                             </div>
-                            <div id="myResource_myResourceId_get_response" class="tab-pane">
+                            <div id="sensors_idSensor_get_response" class="tab-pane">
                               <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
                               <h3>Body</h3>
                               <p><strong>Type: application/json</strong></p><strong>Example:</strong>
-                              <pre>{ "<span class="hljs-attribute">id</span>" : <span class="hljs-value"><span class="hljs-number">1</span></span>, "<span class="hljs-attribute">name</span>" : <span class="hljs-value"><span class="hljs-string">"myResource"</span> </span>}
+                              <pre>{
+   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"None, really"</span></span>,
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"sensor_org1_0"</span></span>,
+   "<span class="hljs-attribute">organizationId</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"THERMO"</span></span>,
+   "<span class="hljs-attribute">visibility</span>": <span class="hljs-value"><span class="hljs-string">"All"</span>
+</span>}
 </pre>
                               <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="sensors_idSensor_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/sensors</span>/{idSensor}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#sensors_idSensor_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#sensors_idSensor_delete_request" data-toggle="tab">Request</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="sensors_idSensor_delete_description" class="tab-pane active"><span><p>Delete specific sensors</p>
+</span>
+                            </div>
+                            <div id="sensors_idSensor_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idSensor string</strong></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer"><a href="#top" class="btn">Back to top</a></div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 id="observations" class="panel-title">
+                /observations
+                
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="resource-description"><p>Get all the observations.</p>
+</div>
+              <div class="panel-group">
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_observations" class="block collapsed"><span id="get_observations" class="badge badge_get">get  </span><span id="post_observations" class="badge badge_post">post  </span><span id="put_observations" class="badge badge_put">put  </span><span class="parent"></span>/observations
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_observations" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#observations_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Get all the observations</p>
+</span></a><a href="#" data-toggle="modal" data-target="#observations_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p><p>Create a new observation</p>
+</span></a><a href="#" data-toggle="modal" data-target="#observations_put" class="list-group-item"><span class="badge badge_put">put  </span><span><p><p>update a new sensor</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="observations_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/observations</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#observations_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#observations_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#observations_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="observations_get_description" class="tab-pane active"><span><p>Get all the observations.</p>
+</span>
+                            </div>
+                            <div id="observations_get_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/observations</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idSensor</strong><em> (integer)</em><p>filter on sensor’s observation</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/observations?sensorid=32</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idOrganization</strong><em> (integer)</em><p>filter on organization’s observation</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/observations?organizationid=123</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idOrganization&amp;idSensor</strong><em> (integer)</em><p>filter that uses organizationid and sensorid</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/observations?organizationid=123&sensorid=32</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="observations_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre>{
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">sensorId</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">timeS</span>": <span class="hljs-value"><span class="hljs-string">"2014-12-13T18:00:06+01:00"</span></span>,
+   "<span class="hljs-attribute">valueObservation</span>": <span class="hljs-value"><span class="hljs-number">4.2076842236244065</span>
+</span>} 
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="observations_post" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/observations</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#observations_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#observations_post_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#observations_post_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="observations_post_description" class="tab-pane active"><span><p>Create a new observation.</p>
+</span>
+                            </div>
+                            <div id="observations_post_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idObservation</strong><em> (string)</em><p>observation’s id [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>timestampObservation</strong><em> (string)</em><p>observation’s time [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"timeS": "2014-12-13T18:00:06+01:00"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>valueObservation</strong><em> (string)</em><p>observation’s value [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"valueObservation": "4.2076842236244065"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>sensorIdObservation</strong><em> (string)</em><p>observation’s sensorId [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"sensorId": 1}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="observations_post_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{ <span class="hljs-number">1</span> }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="observations_put" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_put">put  </span>&nbsp;&nbsp;<span class="parent"></span>/observations</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#observations_put_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#observations_put_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#observations_put_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="observations_put_description" class="tab-pane active"><span><p>update a new sensor.</p>
+</span>
+                            </div>
+                            <div id="observations_put_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idObservation</strong><em> (string)</em><p>observation’s id [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>timestampObservation</strong><em> (string)</em><p>observation’s time [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"timeS": "2015-12-13T18:00:06+01:00"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>valueObservation</strong><em> (string)</em><p>observation’s value [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"valueObservation": "0.2076842236244065"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>sensorIdObservation</strong><em> (string)</em><p>observation’s sensorId [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"sensorId": 3}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="observations_put_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{  }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_observations_idObservation" class="block collapsed"><span id="get_observations_idObservation" class="badge badge_get">get  </span><span id="delete_observations_idObservation" class="badge badge_delete">delete  </span><span class="parent">/observations</span>/{idObservation}
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_observations_idObservation" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#observations_idObservation_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Get One observation by its id</p>
+</span></a><a href="#" data-toggle="modal" data-target="#observations_idObservation_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p><p>Delete an observation</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="observations_idObservation_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/observations</span>/{idObservation}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#observations_idObservation_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#observations_idObservation_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#observations_idObservation_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="observations_idObservation_get_description" class="tab-pane active"><span><p>Get One observation by its id.</p>
+</span>
+                            </div>
+                            <div id="observations_idObservation_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idObservation string</strong></li>
+                              </ul>
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/observations/3</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="observations_idObservation_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre>{
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">sensorId</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">timeS</span>": <span class="hljs-value"><span class="hljs-string">"2014-12-13T18:00:06+01:00"</span></span>,
+   "<span class="hljs-attribute">valueObservation</span>": <span class="hljs-value"><span class="hljs-number">4.2076842236244065</span>
+</span>}
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="observations_idObservation_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/observations</span>/{idObservation}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#observations_idObservation_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#observations_idObservation_delete_request" data-toggle="tab">Request</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="observations_idObservation_delete_description" class="tab-pane active"><span><p>Delete an observation.</p>
+</span>
+                            </div>
+                            <div id="observations_idObservation_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idObservation string</strong></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer"><a href="#top" class="btn">Back to top</a></div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 id="organizations" class="panel-title">
+                /organizations
+                
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="resource-description"><p>Get all the available organizations</p>
+</div>
+              <div class="panel-group">
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_organizations" class="block collapsed"><span id="get_organizations" class="badge badge_get">get  </span><span id="post_organizations" class="badge badge_post">post  </span><span id="put_organizations" class="badge badge_put">put  </span><span class="parent"></span>/organizations
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_organizations" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#organizations_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Get all the organizations</p>
+</span></a><a href="#" data-toggle="modal" data-target="#organizations_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p><p>Create a new organization</p>
+</span></a><a href="#" data-toggle="modal" data-target="#organizations_put" class="list-group-item"><span class="badge badge_put">put  </span><span><p><p>update a new organization</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="organizations_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/organizations</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#organizations_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#organizations_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#organizations_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="organizations_get_description" class="tab-pane active"><span><p>Get all the organizations.</p>
+</span>
+                            </div>
+                            <div id="organizations_get_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/organizations</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idUser</strong><em> (integer)</em><p>filter that uses userid</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/organizations?sensorid=32</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="organizations_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre>{
+   "<span class="hljs-attribute">contactId</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Org1"</span>
+</span>} 
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="organizations_post" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/organizations</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#organizations_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#organizations_post_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#organizations_post_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="organizations_post_description" class="tab-pane active"><span><p>Create a new organization.</p>
+</span>
+                            </div>
+                            <div id="organizations_post_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idOrganization</strong><em> (string)</em><p>organization’s id [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>nameOrganization</strong><em> (string)</em><p>organization’s name [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"name": "Org1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>contactIdOrganization</strong><em> (string)</em><p>organization’s contactId [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"contactId": 1}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="organizations_post_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{ <span class="hljs-number">1</span> }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="organizations_put" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_put">put  </span>&nbsp;&nbsp;<span class="parent"></span>/organizations</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#organizations_put_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#organizations_put_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#organizations_put_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="organizations_put_description" class="tab-pane active"><span><p>update a new organization.</p>
+</span>
+                            </div>
+                            <div id="organizations_put_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idOrganization</strong><em> (string)</em><p>organization’s id [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>nameOrganization</strong><em> (string)</em><p>organization’s name [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"name": "Org1_update"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>contactIdOrganization</strong><em> (string)</em><p>organization’s contactId [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"contactId": 2}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="organizations_put_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{  }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_organizations_idOrganization" class="block collapsed"><span id="get_organizations_idOrganization" class="badge badge_get">get  </span><span id="delete_organizations_idOrganization" class="badge badge_delete">delete  </span><span class="parent">/organizations</span>/{idOrganization}
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_organizations_idOrganization" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#organizations_idOrganization_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Get One organization by its id</p>
+</span></a><a href="#" data-toggle="modal" data-target="#organizations_idOrganization_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p><p>Delete an organization</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="organizations_idOrganization_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/organizations</span>/{idOrganization}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#organizations_idOrganization_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#organizations_idOrganization_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#organizations_idOrganization_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="organizations_idOrganization_get_description" class="tab-pane active"><span><p>Get One organization by its id.</p>
+</span>
+                            </div>
+                            <div id="organizations_idOrganization_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idOrganization string</strong></li>
+                              </ul>
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/organizations/3</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="organizations_idOrganization_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre>{
+   "<span class="hljs-attribute">contactId</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Org1"</span>
+</span>}
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="organizations_idOrganization_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/organizations</span>/{idOrganization}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#organizations_idOrganization_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#organizations_idOrganization_delete_request" data-toggle="tab">Request</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="organizations_idOrganization_delete_description" class="tab-pane active"><span><p>Delete an organization.</p>
+</span>
+                            </div>
+                            <div id="organizations_idOrganization_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idOrganization string</strong></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer"><a href="#top" class="btn">Back to top</a></div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 id="users" class="panel-title">
+                /users
+                
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="resource-description"><p>Get all the users</p>
+</div>
+              <div class="panel-group">
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_users" class="block collapsed"><span id="get_users" class="badge badge_get">get  </span><span id="post_users" class="badge badge_post">post  </span><span id="put_users" class="badge badge_put">put  </span><span class="parent"></span>/users
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_users" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#users_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Get all the users</p>
+</span></a><a href="#" data-toggle="modal" data-target="#users_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p><p>Create a new user</p>
+</span></a><a href="#" data-toggle="modal" data-target="#users_put" class="list-group-item"><span class="badge badge_put">put  </span><span><p><p>update a new user</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="users_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/users</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#users_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#users_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#users_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="users_get_description" class="tab-pane active"><span><p>Get all the users.</p>
+</span>
+                            </div>
+                            <div id="users_get_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/users</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idOrganization</strong><em> (integer)</em><p>filter that uses organizaionid</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/users?organizaionid=123</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="users_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre>{
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+   "<span class="hljs-attribute">organizationId</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+</span>} 
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="users_post" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/users</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#users_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#users_post_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#users_post_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="users_post_description" class="tab-pane active"><span><p>Create a new user.</p>
+</span>
+                            </div>
+                            <div id="users_post_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idUser</strong><em> (string)</em><p>user’s id [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>nameUser</strong><em> (string)</em><p>user’s name [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"name": "John"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>organizationIdUser</strong><em> (string)</em><p>user’s organizationId [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"organizationId": 1}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="users_post_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{ <span class="hljs-number">1</span> }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="users_put" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_put">put  </span>&nbsp;&nbsp;<span class="parent"></span>/users</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#users_put_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#users_put_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#users_put_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="users_put_description" class="tab-pane active"><span><p>update a new user.</p>
+</span>
+                            </div>
+                            <div id="users_put_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idUser</strong><em> (string)</em><p>user’s id [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>nameUser</strong><em> (string)</em><p>user’s name [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"name": "John_update"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>organizationIdUser</strong><em> (string)</em><p>user’s organizationId [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"organizationId": 2}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="users_put_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{  }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_users_idUser" class="block collapsed"><span id="get_users_idUser" class="badge badge_get">get  </span><span id="delete_users_idUser" class="badge badge_delete">delete  </span><span class="parent">/users</span>/{idUser}
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_users_idUser" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#users_idUser_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Retrieve an user by its id</p>
+</span></a><a href="#" data-toggle="modal" data-target="#users_idUser_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p><p>Delete a user</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="users_idUser_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/users</span>/{idUser}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#users_idUser_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#users_idUser_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#users_idUser_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="users_idUser_get_description" class="tab-pane active"><span><p>Retrieve an user by its id.</p>
+</span>
+                            </div>
+                            <div id="users_idUser_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idUser string</strong></li>
+                              </ul>
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/users/3</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="users_idUser_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre>{
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+   "<span class="hljs-attribute">organizationId</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+</span>}
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="users_idUser_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/users</span>/{idUser}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#users_idUser_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#users_idUser_delete_request" data-toggle="tab">Request</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="users_idUser_delete_description" class="tab-pane active"><span><p>Delete a user.</p>
+</span>
+                            </div>
+                            <div id="users_idUser_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idUser string</strong></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer"><a href="#top" class="btn">Back to top</a></div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 id="facts" class="panel-title">
+                /facts
+                
+              </h3>
+            </div>
+            <div class="panel-body">
+              <div class="resource-description"><p>Get all the facts</p>
+</div>
+              <div class="panel-group">
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_facts" class="block collapsed"><span id="get_facts" class="badge badge_get">get  </span><span id="post_facts" class="badge badge_post">post  </span><span id="put_facts" class="badge badge_put">put  </span><span class="parent"></span>/facts
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_facts" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#facts_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Get all the facts</p>
+</span></a><a href="#" data-toggle="modal" data-target="#facts_post" class="list-group-item"><span class="badge badge_post">post  </span><span><p><p>Create a new fact</p>
+</span></a><a href="#" data-toggle="modal" data-target="#facts_put" class="list-group-item"><span class="badge badge_put">put  </span><span><p><p>update a new fact</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="facts_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent"></span>/facts</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#facts_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#facts_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#facts_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="facts_get_description" class="tab-pane active"><span><p>Get all the facts.</p>
+</span>
+                            </div>
+                            <div id="facts_get_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/facts</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idOrganization</strong><em> (integer)</em><p>filter on organization’s facts</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/facts?organizaionid=123</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idSensor</strong><em> (integer)</em><p>filter on sensor’s facts</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/facts?sensorid=123</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>idSensor&amp;date</strong><em> (string)</em><p>filter that uses sensorid &amp; date</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/facts?sensorid=32&date=2014-12-13</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="facts_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre>{
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">information</span>": <span class="hljs-value"><span class="hljs-string">"min"</span>:<span class="hljs-number">0.0011727332647970545</span></span>,"<span class="hljs-attribute">avg</span>":<span class="hljs-value"><span class="hljs-number">1.9772292442778343</span></span>,"<span class="hljs-attribute">max</span>":<span class="hljs-value"><span class="hljs-number">9.953122573291932</span></span>,"<span class="hljs-attribute">counter</span>":<span class="hljs-value"><span class="hljs-number">51</span></span>,
+   "<span class="hljs-attribute">organizationId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+   "<span class="hljs-attribute">sensorId</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
+   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"DATE_COUNTER"</span></span>,
+   "<span class="hljs-attribute">visibility</span>": <span class="hljs-value"><span class="hljs-string">"ALL"</span>
+</span>} 
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="facts_post" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_post">post  </span>&nbsp;&nbsp;<span class="parent"></span>/facts</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#facts_post_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#facts_post_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#facts_post_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="facts_post_description" class="tab-pane active"><span><p>Create a new fact.</p>
+</span>
+                            </div>
+                            <div id="facts_post_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idFact</strong><em> (string)</em><p>fact’s id [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>informationFact</strong><em> (string)</em><p>fact’s information [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"information": "min":0.0011727332647970545,"avg":1.9772292442778343,"max":9.953122573291932,"counter":51}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>typeFact</strong><em> (string)</em><p>fact’s type [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"organizationId": 2}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>visibilityFact</strong><em> (string)</em><p>fact’s visibility [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"visibility": "ALL"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>organizationIdFact</strong><em> (string)</em><p>fact’s organizaionId [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"organizationId": 2}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>sensorIdFact</strong><em> (string)</em><p>fact’s sensorId [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"sensorId": 20}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="facts_post_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{ <span class="hljs-number">1</span> }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="facts_put" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_put">put  </span>&nbsp;&nbsp;<span class="parent"></span>/facts</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#facts_put_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#facts_put_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#facts_put_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="facts_put_description" class="tab-pane active"><span><p>update a new fact.</p>
+</span>
+                            </div>
+                            <div id="facts_put_request" class="tab-pane">
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>idFact</strong><em> (string)</em><p>fact’s id [required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"id": "1"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>informationFact</strong><em> (string)</em><p>fact’s information [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"information": "min":0.0011727332647970545,"avg":1.9772292442778343,"max":9.953122573291932,"counter":51}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>typeFact</strong><em> (string)</em><p>fact’s type [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"organizationId": 2}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>visibilityFact</strong><em> (string)</em><p>fact’s visibility [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"visibility": "ALL"}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>organizationIdFact</strong><em> (string)</em><p>fact’s organizaionId [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"organizationId": 2}
+</code></small></p>
+                                </li>
+                                <li class="markdown"><strong>sensorIdFact</strong><em> (string)</em><p>fact’s sensorId [not required]</p>
+
+                                  <p><small><strong>Example:</strong><code>{"sensorId": 20}
+</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="facts_put_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre><span class="hljs-collection">{  }</span>
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Error.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-white">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <!-- collapsed "buttons" (on the right side)--><a data-toggle="collapse" href="#panel_facts_idFact" class="block collapsed"><span id="get_facts_idFact" class="badge badge_get">get  </span><span id="delete_facts_idFact" class="badge badge_delete">delete  </span><span class="parent">/facts</span>/{idFact}
+                        </a>
+                    </h4>
+                  </div>
+                  <div id="panel_facts_idFact" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <!-- extended "buttons" (list)-->
+                      <div class="list-group"><a href="#" data-toggle="modal" data-target="#facts_idFact_get" class="list-group-item"><span class="badge badge_get">get  </span><span><p><p>Retrieve an fact by its id</p>
+</span></a><a href="#" data-toggle="modal" data-target="#facts_idFact_delete" class="list-group-item"><span class="badge badge_delete">delete  </span><span><p><p>Delete a fact</p>
+</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="facts_idFact_get" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_get">get  </span>&nbsp;&nbsp;<span class="parent">/facts</span>/{idFact}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#facts_idFact_get_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#facts_idFact_get_request" data-toggle="tab">Request</a></li>
+                            <li><a href="#facts_idFact_get_response" data-toggle="tab">Response</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="facts_idFact_get_description" class="tab-pane active"><span><p>Retrieve an fact by its id.</p>
+</span>
+                            </div>
+                            <div id="facts_idFact_get_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idFact string</strong></li>
+                              </ul>
+                              <h3>Query Parameters</h3>
+                              <ul>
+                                <li class="markdown"><strong>empty</strong><em> (string)</em><p>without filter</p>
+
+                                  <p><small><strong>Example:</strong><code>../AMT_REST/api/facts/3</code></small></p>
+                                </li>
+                              </ul>
+                            </div>
+                            <div id="facts_idFact_get_response" class="tab-pane">
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                              <h3>Body</h3>
+                              <p><strong>Type: application/json</strong></p><strong>Example:</strong>
+                              <pre>{
+   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+   "<span class="hljs-attribute">information</span>": <span class="hljs-value"><span class="hljs-string">"min"</span>:<span class="hljs-number">0.0011727332647970545</span></span>,"<span class="hljs-attribute">avg</span>":<span class="hljs-value"><span class="hljs-number">1.9772292442778343</span></span>,"<span class="hljs-attribute">max</span>":<span class="hljs-value"><span class="hljs-number">9.953122573291932</span></span>,"<span class="hljs-attribute">counter</span>":<span class="hljs-value"><span class="hljs-number">51</span></span>,
+   "<span class="hljs-attribute">organizationId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+   "<span class="hljs-attribute">sensorId</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
+   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"DATE_COUNTER"</span></span>,
+   "<span class="hljs-attribute">visibility</span>": <span class="hljs-value"><span class="hljs-string">"ALL"</span>
+</span>}
+</pre>
+                              <h2>HTTP status code&nbsp;<a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>The resource was not found.</p>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="facts_idFact_delete" class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                          <h4 class="modal-title"><span class="badge badge_delete">delete  </span>&nbsp;&nbsp;<span class="parent">/facts</span>/{idFact}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Nav tabs-->
+                          <ul class="nav nav-tabs">
+                            <li class="active"><a href="#facts_idFact_delete_description" data-toggle="tab">Description</a></li>
+                            <li><a href="#facts_idFact_delete_request" data-toggle="tab">Request</a></li>
+                          </ul>
+                          <!-- Tab panes-->
+                          <div class="tab-content">
+                            <div id="facts_idFact_delete_description" class="tab-pane active"><span><p>Delete a fact.</p>
+</span>
+                            </div>
+                            <div id="facts_idFact_delete_request" class="tab-pane">
+                              <h3>URI Parameters</h3>
+                              <ul>
+                                <li><strong>idFact string</strong></li>
+                              </ul>
                             </div>
                           </div>
                         </div>
@@ -172,9 +1575,12 @@
     <div class="footer">
       <div class="container">
         <p><a href="https://github.com/lotaris/apidoc-seed">apidoc-seed</a>&nbsp;- An API documentation project using Grunt, Metalsmith and RAML.</p>
-        <p>Version: 0.0.1  |  Built December 11, 2014 1:41 PM</p>
+        <p>Version: 0.0.1  |  Built December 14, 2014 4:11 PM</p>
       </div>
     </div>
-    <script type="text/javascript" src="C:/Program Files (x86)/Git/foobar/js/global.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/smoothscroll.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
   </body>
 </html>
